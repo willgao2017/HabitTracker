@@ -47,10 +47,6 @@ public class MainActivity extends AppCompatActivity {
         displayDatabaseInfo();
     }
 
-    /**
-     * Temporary helper method to display information in the onscreen TextView about the state of
-     * the pets database.
-     */
     private void displayDatabaseInfo() {
 
         // Create and/or open a database to read from it
@@ -75,14 +71,6 @@ public class MainActivity extends AppCompatActivity {
         TextView displayView = (TextView) findViewById(R.id.text_view_habit);
 
         try {
-
-            // Create a header in the Text View that looks like this:
-            //
-            // The pets table contains <number of rows in Cursor> pets.
-            // _id - name - breed - gender - weight
-            //
-            // In the while loop below, iterate through the rows of the cursor and display
-            // the information from each column in this order.
             displayView.setText("The habits table contains " + cursor.getCount() + " habit(s).\n\n");
             displayView.append(HabitEntry._ID + " - " +
                     HabitContract.HabitEntry.COLUMN_HABIT_NAME + " - " +
@@ -112,9 +100,7 @@ public class MainActivity extends AppCompatActivity {
             // resources and makes it invalid.
             cursor.close();
         }
-
     }
-
 
     private void insertPet() {
 

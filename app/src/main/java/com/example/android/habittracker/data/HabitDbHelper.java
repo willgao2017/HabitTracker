@@ -21,19 +21,12 @@ import android.database.sqlite.SQLiteOpenHelper;
         import android.content.Context;
         import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Database helper for Pets app. Manages database creation and version management.
- */
 public class HabitDbHelper extends SQLiteOpenHelper {
 
     public static final String LOG_TAG = HabitDbHelper.class.getSimpleName();
 
-    /** Name of the database file */
     private static final String DATABASE_NAME = "habits.db";
 
-    /**
-     * Database version. If you change the database schema, you must increment the database version.
-     */
     private static final int DATABASE_VERSION = 1;
 
     /**
