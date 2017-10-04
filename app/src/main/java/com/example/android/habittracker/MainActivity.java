@@ -47,6 +47,29 @@ public class MainActivity extends AppCompatActivity {
         displayDatabaseInfo();
     }
 
+    public Cursor query() {
+
+        // Create and/or open a database to read from it
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        String[] project = {
+                HabitContract.HabitEntry._ID,
+                HabitContract.HabitEntry.COLUMN_HABIT_NAME,
+        };
+
+        Cursor cursor = db.query(
+                HabitContract.HabitEntry.TABLE_NAME,
+                project,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        return cursor;
+    }
+
     private void displayDatabaseInfo() {
 
         // Create and/or open a database to read from it
